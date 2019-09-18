@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let TiVi=function (status,channel,volume) {
+        this.status=status;
+        this.channel=channel;
+        this.volume=volume;
+
+        this.setChannel=function (channel) {
+            this.channel= channel
+        };
+        this.setVolume=function () {
+            this.volume= volume+1;
+        }
+    };
+    let Remote= function (id) {
+        this.id=id;
+        this.setChannel=function (tv,channel) {
+            tv.setChannel(channel);
+        };
+        this.setVolume=function (tv) {
+            tv.setVolume();
+        }
+    };
+    tv1=new TiVi("on","kenh 1",10);
+    remote=new Remote(1);
+    remote.setChannel(tv1,"kenh 14");
+    remote.setVolume(tv1);
+    console.log(tv1.channel);
+    console.log(tv1.volume);
+
+
+</script>
+
+
+</body>
+</html>
